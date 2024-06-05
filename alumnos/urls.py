@@ -3,5 +3,9 @@ from . import views
 
 urlpatterns = [
     path('index', views.index, name="index"),
-    path('listadoSQL', views.listadoSQL, name='listadoSQL')
+    path('crud', views.crud, name="crud"),
+    path('alumnosAdd', views.alumnosAdd, name="alumnosAdd"),
+    #path('alumnos_add', views.alumnos_add, name="alumnos_add"),
+    #path('alumnos_edit', views.alumnos_edit, name="alumnos_edit"),
+    #path('alumnos_list', views.alumnos_list, name="alumnos_list"),
 ]
