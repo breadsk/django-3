@@ -4,8 +4,9 @@ from .models import Genero,Alumno
 # Create your views here.
 
 def index(request):
-    alumnos = Alumno.objects.all()
-    context = {"alumnos":alumnos}
+    #alumnos = Alumno.objects.all()
+    #context = {"alumnos":alumnos}
+    context={}
     return render(request,"alumnos/index.html",context)
 
 def crud(request):
@@ -15,6 +16,7 @@ def crud(request):
 
 def alumnosAdd(request):
     if request.method != "POST":
+        print(request)
         #No es un post , por lo tanto se muestra el formulario para agregar
         generos = Genero.objects.all()
         context={"generos":generos}
