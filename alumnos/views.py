@@ -87,7 +87,6 @@ def alumnos_findEdit(request,pk):
             return render(request,"alumnos/alumnos_edit.html",context)
 
 def alumnosUpdate(request):
-
     if request.method == "POST":
         #Es un post, por lo tanto se recuperan los datos del formulario
         # y se graban en una tabla
@@ -125,3 +124,9 @@ def alumnosUpdate(request):
         alumnos = Alumno.objects.all()
         context = {"alumnos":alumnos}
         return render(request,"alumnos/alumnos_list.html",context)
+    
+def crud_generos(request):
+    generos = Genero.objects.all()
+    #generos = Genero.objects.raw("SELECT * FROM alumnos_alumno")
+    context = {"generos":generos}
+    return render(request,"alumno/generos_list.html",context)
