@@ -27,13 +27,13 @@
             <th>Apellido P</th>
             <th>Eliminar</th>
             <th>Modificar</th>
-            {% for x in alumnos %}
+            {% for alumno in alumnos %}
                 <tr>
-                    <td>{{x.rut}}</td>
-                    <td>{{x.nombre}}</td>
-                    <td>{{x.apellido_paterno}}</td>
-                    <td><a href="{% url 'alumnos_del' pk=x.rut %}">Eliminar</a></td>
-                    <td><a href="{% url 'alumnos_findEdit' pk=x.rut %}">Modificar</a></td>
+                    <td>{{alumno.rut}}</td>
+                    <td>{{alumno.nombre}}</td>
+                    <td>{{alumno.apellido_paterno}}</td>
+                    <td><a href="{% url 'alumnos_del' pk=alumno.rut %}">Eliminar</a></td>
+                    <td><a href="{% url 'alumnos_findEdit' pk=alumno.rut %}">Modificar</a></td>
                 </tr>
             {% endfor %}
         {% endif %}

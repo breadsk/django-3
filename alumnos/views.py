@@ -11,6 +11,7 @@ def index(request):
 
 def crud(request):
     alumnos = Alumno.objects.all()
+    #alumnos = Alumno.objects.raw("SELECT * FROM alumnos_alumno")
     context = {"alumnos":alumnos}
     return render(request,"alumnos/alumnos_list.html",context)
 
@@ -84,7 +85,6 @@ def alumnos_findEdit(request,pk):
         else:
             context={"mensaje":"Error, rut no existe"}
             return render(request,"alumnos/alumnos_edit.html",context)
-
 
 def alumnosUpdate(request):
 

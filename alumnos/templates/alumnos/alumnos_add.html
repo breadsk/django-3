@@ -18,10 +18,11 @@
             <pre>Apellido P:  <input type="text"name="paterno"> </pre>
             <pre>Apellido M:  <input type="text"name="materno"> </pre>
             <pre>Fecha Nac:  <input type="date"name="fechaNac"> </pre>
-            <pre>Genero <select name="genero">
-                {% for genero in generos %}
-                    <option value="{{genero.id_genero}}">{{genero.genero}}</option>
-                {% endfor %}
+            <pre>Genero 
+                <select name="genero">
+                    {% for genero in generos %}
+                        <option value="{{genero.id_genero}}">{{genero.genero}}</option>
+                    {% endfor %}
             </select>
             </pre>
             <pre>Celular:  <input type="text"name="telefono"> </pre>
