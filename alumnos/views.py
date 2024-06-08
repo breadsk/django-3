@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 from .models import Genero,Alumno
 # Create your views here.
+from .forms import GeneroForm
 
 def index(request):
     #alumnos = Alumno.objects.all()
@@ -130,3 +131,24 @@ def crud_generos(request):
     #generos = Genero.objects.raw("SELECT * FROM alumnos_alumno")
     context = {"generos":generos}
     return render(request,"alumno/generos_list.html",context)
+
+def generosAdd(request):
+    print("estoy en controlador generosAdd")
+    context = {}
+
+    if request.method == 'POST':
+        print("El controlador es un post")
+        form = GeneroForm(request.POST)
+        print("Estoy en agregar , is_valid")
+        form.save()
+        #Limpiar form
+        form = GeneroForm()
+        context = {
+            "mensaje": "Ok, Datos guardados exitosamente",
+            "form":form
+        }
+        return render(request,"alumnos/generos_add.html",context)
+    else: 
+        form = GeneroForm()
+        context = {'form':form}
+        return render(request,"alumnos/generos_add.html",context)
